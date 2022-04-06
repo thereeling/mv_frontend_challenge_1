@@ -1,6 +1,6 @@
 // Combining reducers for easier functionality.
 
-import { combineReducers } from "redux";
+import { combineReducers } from "@reduxjs/toolkit";
 import bankReducer from "./bankReducer";
 
 const reducers = combineReducers({
