@@ -1,7 +1,7 @@
 {
   "name": "mv_frontend_challenge_1",
   "version": "0.1.0",
-  "homepage": "https://thereeling.github.io/react-gh-pages",
+  "homepage": "https://thereeling.github.io/mv_frontend_challenge_1",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
