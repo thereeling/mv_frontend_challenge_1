@@ -1,10 +1,27 @@
 import './App.css';
-import { useSelector } from 'react-redux'
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from '@reduxjs/toolkit';
+import { actionCreators } from './state/index';
 
 function App() {
 
   const bank = useSelector((state) => state.bank);
-  
+  const[depositValue, setDepositValue] = useState(0);
+  const[withdrawValue, setWithdrawValue] = useState(0);
+  const dispatch = useDispatch();
+
+  const { depositBank, withdrawBank } = bindActionCreators(actionCreators, dispatch);
+
+  const depositOnclickHandler = () =>{
+    depositBank(depositValue)
+  };
+  const withdrawOnclickHandler = () =>{
+    withdrawBank(withdrawValue)
+  };
+
+
+
 
   return (
     <div className="App container mx-auto px-4">
@@ -20,13 +37,12 @@ function App() {
             <div className="w-full p-8 space-y-8 text-center border border-gray-200 rounded-lg dark:border-gray-700">
               <p className="font-medium text-gray-500 uppercase dark:text-gray-300">Deposit</p>
 
-              <h2 className="text-5xl font-bold text-gray-800 uppercase dark:text-gray-100">
-                $0
-              </h2>
+              <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" type="number" id='deposit-input' value={depositValue} onChange={(e) => {setDepositValue(e.target.value)}}/>
+
 
               <br></br>
 
-              <button className="w-full px-4 py-2 mt-10 tracking-wide text-white capitalize transition-colors duration-200 transform bg-green-600 rounded-md hover:bg-green-500 focus:outline-none focus:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+              <button className="w-full px-4 py-2 mt-10 tracking-wide text-white capitalize transition-colors duration-200 transform bg-green-600 rounded-md hover:bg-green-500 focus:outline-none focus:bg-green-500 focus:ring focus:ring-green-300 focus:ring-opacity-80" onClick={depositOnclickHandler}>
                 Deposit
               </button>
             </div>
@@ -37,7 +53,7 @@ function App() {
               <br></br>
 
               <h2 className="text-5xl font-bold text-white uppercase dark:text-gray-100">
-                $40
+                ${bank}
               </h2>
 
               <br></br>
@@ -47,14 +63,12 @@ function App() {
             <div className="w-full p-8 space-y-8 text-center border border-gray-200 rounded-lg dark:border-gray-700">
               <p className="font-medium text-gray-500 uppercase dark:text-gray-300">Withdraw</p>
 
-              <h2 className="text-5xl font-bold text-gray-800 uppercase dark:text-gray-100">
-                $100
-              </h2>
+              <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-red-500" type="number" id='withdraw-input' value={withdrawValue} onChange={(e) => {setWithdrawValue(e.target.value)}}/>
 
               <br></br>
 
-              <button className="w-full px-4 py-2 mt-10 tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                Withdraw
+              <button className="w-full px-4 py-2 mt-10 tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:bg-red-500 focus:ring focus:ring-red-300 focus:ring-opacity-80" onClick={withdrawOnclickHandler}>
+                Withdraw              
               </button>
             </div>
           </div>
