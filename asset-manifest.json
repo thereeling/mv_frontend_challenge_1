@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.d8707704.css",
-    "main.js": "/react-gh-pages/static/js/main.5a268ff2.js",
-    "static/js/787.c24448a9.chunk.js": "/react-gh-pages/static/js/787.c24448a9.chunk.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.d8707704.css.map": "/react-gh-pages/static/css/main.d8707704.css.map",
-    "main.5a268ff2.js.map": "/react-gh-pages/static/js/main.5a268ff2.js.map",
-    "787.c24448a9.chunk.js.map": "/react-gh-pages/static/js/787.c24448a9.chunk.js.map"
+    "main.css": "/mv_frontend_challenge_1/static/css/main.d8707704.css",
+    "main.js": "/mv_frontend_challenge_1/static/js/main.5f518278.js",
+    "static/js/787.c24448a9.chunk.js": "/mv_frontend_challenge_1/static/js/787.c24448a9.chunk.js",
+    "index.html": "/mv_frontend_challenge_1/index.html",
+    "main.d8707704.css.map": "/mv_frontend_challenge_1/static/css/main.d8707704.css.map",
+    "main.5f518278.js.map": "/mv_frontend_challenge_1/static/js/main.5f518278.js.map",
+    "787.c24448a9.chunk.js.map": "/mv_frontend_challenge_1/static/js/787.c24448a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d8707704.css",
-    "static/js/main.5a268ff2.js"
+    "static/js/main.5f518278.js"
   ]
 }
