@@ -1,3 +1,5 @@
+// Here are my two action-creators that tell the store what specific action is taking place with what payload.
+
 export const depositBank = (amount) => {
     return {
             type: 'deposit',
